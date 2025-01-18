@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUT jalal</title>
+    <style>
+        /* Global Style */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-family: 'Sans-serif', Arial, Helvetica;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .main-content h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .main-content p {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .wish-form {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .wish-form input {
+            width: 70%;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            margin-right: 10px;
+        }
+
+        .wish-form button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background: #ff6b6b;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .wish-form button:hover {
+            background: #ee5253;
+        }
+
+        .wishes {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .wishes li {
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 10px;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .photo-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .photo-item {
+            flex: 1;
+            max-width: 48%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: auto;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .photo-item p {
+            padding: 10px;
+            font-size: 1rem;
+        }
+
+        .cake-section {
+            text-align: center;
+            margin: 50px auto;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .cake-section img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .cake-section p {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            color: #fff;
+        }
+
+        .audio-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .audio-container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background: #fff;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .audio-container button:hover {
+            background: #574b90;
+        }
+
+        footer {
+            text-align: center;
+            margin: 30px 0;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.2);
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            0% { opacity: 0; transform: translateX(-100px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Selamat Ulang Tahun🚀 Nadyatul zahra</h1>
+     
+    </header>
+    <div class="main-content">
+        <h2>Pesan Buat lu</h2>
+        <p>Hi Nadya sory ya gw ga bisa ngasih apa apa buat lu, gw cuma bisa buat web kaya gini doang, dan gw juga telat ngasih ini ke lu,pesan gw si lu harus bisa jadi diri lu sendiri,jangan ketergantungan sama orang lain,lakukan semua hal yang lu mau.lu itu wanita baik banget.</p>
+        
+        <div class="wish-form">
+            <input type="text" id="wishInput" placeholder="Tulis ucapanmu di sini...">
+            <button onclick="addWish()">Kirim</button>
+        </div>
+        
+        <ul class="wishes" id="wishList"></ul>
+
+        <!-- Photo Section -->
+        <div class="photo-section">
+            <div class="photo-item">
+                <img src="a.jpg" alt="Foto 1">
+                <p>haha selamat ulang tahun semoga lu bisa jadi lebih baik kedepannya❤️</p>
+            </div>
+            <div class="photo-item">
+                <img src="b.jpg" alt="Foto 2">
+                <p>tetap rajin belajarnya jangan putus asa dalam menuntut ilmu</p>
+            </div>
+        </div>
+
+        <!-- Cake Section -->
+        <div class="cake-section">
+            <img src="c.png" alt="Kue Ulang Tahun">
+ </div>
+
+        <!-- Audio Section -->
+        <div class="audio-container">
+
+            <audio id="backgroundMusic" src="g.webm"></audio>
+            <button onclick="playMusic()">🎵</button>
+        </div>
+    </div>
+   
+
+    <script>
+        function addWish() {
+            const input = document.getElementById('wishInput');
+            const wishList = document.getElementById('wishList');
+            const wish = input.value;
+
+            if (wish.trim()) {
+                const listItem = document.createElement('li');
+                listItem.textContent = wish;
+                wishList.appendChild(listItem);
+                input.value = '';
+            } else {
+                alert('Harap tuliskan ucapan terlebih dahulu!');
+            }
+        }
+
+        function playMusic() {
+            const music = document.getElementById('backgroundMusic');
+            music.play();
+        }
+    </script>
+</body>
+</html>
